@@ -79,9 +79,9 @@ public class NotesService implements InotesService {
 //		rabbitTemplate.convertAndSend(exchange,routing,note);
 		
 		notesrepository.save(note);
-		redisservice.putMap("note", note.getId(), note);
+		//redisservice.putMap("note", note.getId(), note);
 		
-		elasticsearch.create(note);
+		//elasticsearch.create(note);
 		@SuppressWarnings("unused")
 		User status = userrepository.save(user.get());
 		response = ResponseStatus.statusinfo(environment.getProperty("status.notes.createdSuccessfull"),
