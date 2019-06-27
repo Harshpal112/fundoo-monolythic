@@ -109,7 +109,7 @@ public class UserService implements IuserService {
 				email.setSubject("Email Verification");
 				email.setBody(linkcreator("http://localhost:8080/emailvalidation/", user.getUserid()));
 //				rabbitTemplate.convertAndSend("exchange", "trim", email);
-				mailService.send(email);
+				//mailService.send(email);
 			} catch (IllegalArgumentException ex) {
 				ex.printStackTrace();
 			}
